@@ -4,7 +4,9 @@
 - install packer https://github.com/wbthomason/packer.nvim
 - open nvim and run `:PackerInstall`
 
-##NEED TO REVIEW SINCE NEW CONFIG
+---
+## NEED TO REVIEW SINCE NEW CONFIG
+
 ## Plugin Shortcuts Keys
 
 ### Surround
@@ -20,3 +22,4 @@ Leader key + ff eg: `,ff`
 
 ### Nvim Tree
 Leader key + n eg: `,n`
+---
