@@ -1,5 +1,10 @@
 # mac-configs
 
+- pull this repo into your .config folder.
+- install packer https://github.com/wbthomason/packer.nvim
+- open nvim and run `:PackerInstall`
+
+##NEED TO REVIEW SINCE NEW CONFIG
 ## Plugin Shortcuts Keys
 
 ### Surround
