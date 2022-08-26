@@ -11,6 +11,8 @@ prettier.setup {
     "typescriptreact",
     "json",
     "scss",
-    "less"
+    "less",
+  	"markdown",
+  	"html"
   }
 }
