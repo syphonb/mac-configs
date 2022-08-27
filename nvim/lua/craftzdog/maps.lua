@@ -2,6 +2,9 @@ local keymap = vim.keymap
 
 keymap.set('n', 'x', '"_x')
 
+-- Add insert escape alternative
+keymap.set('i', 'jk', '<ESC>')
+
 -- Increment/decrement
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
