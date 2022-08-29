@@ -43,7 +43,6 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browse
 
   use 'mhinz/vim-startify' -- Vim startup screen
-  use 'Yggdroot/indentLine' -- Line Indent Highlight
   use 'tpope/vim-surround' -- Replace surrounding elements
 end)
 
