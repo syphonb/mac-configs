@@ -171,8 +171,8 @@ local config = {
 			["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
 			["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
 
-			["<A-j>"] = { ":m .+1<CR>==", desc = "Move line down one" },
-			["<A-k>"] = { ":m .-2<CR>==", desc = "Move line up one" },
+			["<C-j>"] = { ":m .+1<CR>==", desc = "Move line down one" },
+			["<C-k>"] = { ":m .-2<CR>==", desc = "Move line up one" },
 			-- quick save
 			-- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 		},
@@ -181,8 +181,8 @@ local config = {
 			-- ["<esc>"] = false,
 		},
 		v = {
-			["<A-j>"] = { ":m '>+1<CR>gv=gv", desc = "Visual mode: move selection down one line" },
-			["<A-k>"] = { ":m '<-2<CR>gv=gv", desc = "Visual mode: move selection up one line" },
+			["<C-j>"] = { ":m '>+1<CR>gv=gv", desc = "Visual mode: move selection down one line" },
+			["<C-k>"] = { ":m '<-2<CR>gv=gv", desc = "Visual mode: move selection up one line" },
 		},
 	},
 
