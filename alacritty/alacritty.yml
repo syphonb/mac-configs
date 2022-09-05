@@ -2,6 +2,9 @@ live_config_reload: true
 
 window:
   dynamic_padding: true
+  padding:
+    x: 10
+    y: 10
   decorations: buttonless
 
 import:
