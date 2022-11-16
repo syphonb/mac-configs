@@ -38,7 +38,7 @@ local config = {
     -- },
   },
 
-  -- set vim options here (vim.<first_key>.<second_key> =  value)
+  -- set vim options here (vim.<first_key>.<second_key> = value)
   options = {
     opt = {
       -- set to true or false etc.
@@ -56,6 +56,7 @@ local config = {
       diagnostics_enabled = true, -- enable diagnostics at start
       status_diagnostics_enabled = true, -- enable diagnostics in statusline
       icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
+      ui_notifications_enabled = true, -- disable notifications when toggling UI elements
     },
   },
   -- If you need more control, you can use the function()...end notation
@@ -204,7 +205,7 @@ local config = {
       ["<leader>bc"] = { "<cmd>BufferLinePickClose<cr>", desc = "Pick to close" },
       ["<leader>bj"] = { "<cmd>BufferLinePick<cr>", desc = "Pick to jump" },
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
-
+      
 			["<C-j>"] = { ":m .+1<CR>==", desc = "Move line down one" },
 			["<C-k>"] = { ":m .-2<CR>==", desc = "Move line up one" },
       -- quick save
@@ -263,37 +264,37 @@ local config = {
       return config -- return final config table
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { 
-				"css",
-				"graphql",
-				"html",
-				"json",
-				"javascript",
-				"lua",
-				"python",
-				"php",
-				"scss",
-				"typescript",
-				"vue",
-			 },
+		ensure_installed = { 
+			"css",
+			"graphql",
+			"html",
+			"json",
+			"javascript",
+			"lua",
+			"python",
+			"php",
+			"scss",
+			"typescript",
+			"vue",
+		 },
     },
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { 
-				"cssls",
-				"cssmodules_ls",
-				"graphql",
-				"html",
-				"intelephense",
-				"jsonls",
-				"marksman",
-				"pyright",
-				"sumneko_lua",
-				"svelte",
-				"tailwindcss",
-				"tsserver",
-				"vuels",
-			 },
+		ensure_installed = { 
+			"cssls",
+			"cssmodules_ls",
+			"graphql",
+			"html",
+			"intelephense",
+			"jsonls",
+			"marksman",
+			"pyright",
+			"sumneko_lua",
+			"svelte",
+			"tailwindcss",
+			"tsserver",
+			"vuels",
+		 },
     },
     -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
@@ -303,11 +304,14 @@ local config = {
 
   -- LuaSnip Options
   luasnip = {
-    -- Add paths for including more VS Code style snippets in luasnip
-    vscode_snippet_paths = {},
     -- Extend filetypes
     filetype_extend = {
       -- javascript = { "javascriptreact" },
+    },
+    -- Configure luasnip loaders (vscode, lua, and/or snipmate)
+    vscode = {
+      -- Add paths for including more VS Code style snippets in luasnip
+      paths = {},
     },
   },
 
