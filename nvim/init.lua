@@ -1,0 +1,2 @@
+require("syphonb")
+print("Hello")
