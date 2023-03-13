@@ -1,2 +1,1 @@
 require("syphonb")
-print("Hello")
