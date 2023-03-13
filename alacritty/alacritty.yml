@@ -6,6 +6,7 @@ window:
     x: 10
     y: 10
   decorations: buttonless
+  opacity: 0.9
 
 import:
   - ~/Documents/Github/mac-configs/alacritty/alacritty-dracula.yml
@@ -14,3 +15,4 @@ font:
   normal:
     family: "MesloLGL Nerd Font"
     style: Regular
+  size: 13.0

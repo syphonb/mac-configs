@@ -39,5 +39,7 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^SpaceLauncher$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^Loom$" manage=off
 
 echo "yabai configuration loaded.."
