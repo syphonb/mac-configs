@@ -80,4 +80,4 @@ shift + alt - d : \
     yabai -m window --resize left:20:0
 
 # open terminal
-alt - return : open -n /Applications/Alacritty.app
+alt - return : open -n /Applications/kitty.app
