@@ -138,7 +138,7 @@ require('lazy').setup({
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.expandtab = true
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -150,6 +150,7 @@ vim.o.incsearch = true
 vim.wo.number = true
 vim.o.nu  = true
 vim.o.relativenumber = true
+vim.o.colorcolumn = "100"
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
