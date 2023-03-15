@@ -124,8 +124,18 @@ require('lazy').setup({
   {
     -- Mark specific files for a quick switch buffer
     'ThePrimeagen/harpoon'
-  }
+  },
 
+  {
+    'windwp/nvim-autopairs',
+    config = function()
+      require("nvim-autopairs").setup {}
+    end;
+  },
+
+  {
+    'windwp/nvim-ts-autotag'
+  }
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   --
   --    An additional note is that if you only copied in the `init.lua`, you can just comment this line
@@ -277,7 +287,12 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'go', 'lua', 'python', 'tsx', 'typescript', 'help', 'vim', "astro", "css", "html", "json", "php", "scss", "javascript" },
+  ensure_installed = { 'go', 'lua', 'python', 'tsx', 'typescript', 'help', 'vim', "astro", "css", "html", "json", "php", "scss", "javascript", "graphql" },
+
+  -- Auto close tags like <div></div>
+  autotag = {
+    enable = true,
+  },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
