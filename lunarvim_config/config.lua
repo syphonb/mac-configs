@@ -13,6 +13,15 @@ lvim.log.level = "warn"
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "dracula"
 vim.opt.relativenumber = true
+vim.o.scrolloff = 8
+
+-- Key cursor in middle of screen when moving up and down
+lvim.keys.normal_mode["<C-d>"] = "<C-d>zz"
+lvim.keys.normal_mode["<C-u>"] = "<C-u>zz"
+
+-- Vim File Browser
+lvim.keys.normal_mode["<leader>pv"] = vim.cmd.Ex
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -189,7 +198,23 @@ lvim.lsp.installer.setup.ensure_installed = {
 lvim.plugins = {
   { "Mofiqul/dracula.nvim" },
   { "catppuccin/nvim" },
+	{ "ThePrimeagen/harpoon" },
 }
+
+-- Harpoon Config
+local mark = require("harpoon.mark")
+local ui = require("harpoon.ui")
+
+-- vim.keymap.set("n", "<leader>a", mark.add_file)
+lvim.keys.normal_mode["<leader>a"] = mark.add_file
+
+lvim.keys.normal_mode["<C-e>"] = ui.toggle_quick_menu
+
+
+lvim.keys.normal_mode["<C-h>"] = function() ui.nav_file(1) end
+lvim.keys.normal_mode["<C-t>"] = function() ui.nav_file(2) end
+lvim.keys.normal_mode["<C-n>"] = function() ui.nav_file(3) end
+lvim.keys.normal_mode["<C-s>"] = function() ui.nav_file(4) end
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {
