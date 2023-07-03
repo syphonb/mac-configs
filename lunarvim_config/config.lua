@@ -197,7 +197,8 @@ lvim.lsp.installer.setup.ensure_installed = {
 lvim.plugins = {
   { "Mofiqul/dracula.nvim" },
   { "catppuccin/nvim" },
-	{ "ThePrimeagen/harpoon" },
+  { "ThePrimeagen/harpoon" },
+  { "williamboman/mason.nvim" }
 }
 
 -- Harpoon Config
