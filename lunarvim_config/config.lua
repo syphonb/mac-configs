@@ -124,7 +124,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "tailwindcss",
   "tsserver",
   "vuels",
-  "theme_check",
 }
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
