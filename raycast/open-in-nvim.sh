@@ -9,7 +9,7 @@
 # @raycast.icon 📟
 
 if [ "$RAYCAST_TRIGGER_POINT" = "folder" ]; then
-    /Applications/kitty.app/Contents/MacOS/kitty -e $SHELL -c "lvim '$(pwd)'"
+    /Applications/kitty.app/Contents/MacOS/kitty -e $SHELL -c "nvim '$(pwd)'"
 else
     selected_file=$(osascript -e 'tell application "Finder"
         set theSelection to selection
@@ -22,7 +22,7 @@ else
     end tell
     return theSelectedItemPath')
     if [ "$selected_file" != "" ]; then
-        /Applications/kitty.app/Contents/MacOS/kitty -e $SHELL -c "lvim '$selected_file'"
+        /Applications/kitty.app/Contents/MacOS/kitty -e $SHELL -c "nvim '$selected_file'"
     else
         echo "No file or folder selected"
     fi
