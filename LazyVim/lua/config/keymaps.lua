@@ -14,6 +14,7 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 -- Buffer
 -- Next Buffer
 vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bprevious<cr>", { desc = "Previous buffer" })
 
 -- Delete Buffer
 vim.keymap.set("n", "<leader>bc", function()
