@@ -29,6 +29,7 @@ cask 'visual-studio-code'
 cask 'discord'
 cask 'github'
 cask 'arc'
+cask 'warp'
 
 # terminal emulators
 cask 'kitty'

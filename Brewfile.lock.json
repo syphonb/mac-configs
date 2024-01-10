@@ -801,7 +801,7 @@
     },
     "cask": {
       "raycast": {
-        "version": "1.64.5",
+        "version": "1.65.0",
         "options": {
           "full_name": "raycast",
           "args": {
@@ -889,6 +889,16 @@
             "require_sha": true
           }
         }
+      },
+      "warp": {
+        "version": "0.2024.01.02.08.02.stable_02",
+        "options": {
+          "full_name": "warp",
+          "args": {
+            "appdir": "~/Applications",
+            "require_sha": true
+          }
+        }
       }
     }
   },
@@ -900,7 +910,7 @@
         "Homebrew/homebrew-core": "api",
         "CLT": "15.1.0.0.1.1700200546",
         "Xcode": "15.1",
-        "macOS": "14.1.2"
+        "macOS": "14.2.1"
       }
     }
   }
