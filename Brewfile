@@ -21,8 +21,9 @@ brew 'gh'
 brew 'bash'
 brew 'neovim'
 brew 'imagemagick'
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai"
+brew 'koekeishiya/formulae/skhd'
+brew 'koekeishiya/formulae/yabai'
+brew 'fish'
 
 cask 'raycast'
 cask 'zoom'
