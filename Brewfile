@@ -21,6 +21,7 @@ brew 'imagemagick'
 brew 'koekeishiya/formulae/skhd'
 brew 'koekeishiya/formulae/yabai'
 brew 'fish'
+brew 'starship'
 
 cask 'raycast'
 cask 'zoom'

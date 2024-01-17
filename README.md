@@ -1,5 +1,8 @@
 # mac-configs
 
+## Installing Apps from Brewfile
+Navigate terminal to the directory with the brewfile and run `brew bundle`
+
 ## Dock Adjustments
 
 `$ defaults write com.apple.dock autohide-delay -int 0`
