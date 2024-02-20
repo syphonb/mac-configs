@@ -23,6 +23,7 @@ brew 'koekeishiya/formulae/yabai'
 brew 'fish'
 brew 'starship'
 brew 'eza'
+brew 'midnight-commander'
 
 cask 'raycast'
 cask 'zoom'

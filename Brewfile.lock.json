@@ -885,6 +885,50 @@
             }
           }
         }
+      },
+      "midnight-commander": {
+        "version": "4.8.31",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "arm64_sonoma": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:a4c54152c514b16f70f8e58ba842d89a6e07c6a2b6f14083a851fac291dc4c6d",
+              "sha256": "a4c54152c514b16f70f8e58ba842d89a6e07c6a2b6f14083a851fac291dc4c6d"
+            },
+            "arm64_ventura": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:90131c6ef144b944c2d09ad8c59b4f4e4f249746669888404b8f8d50ed837181",
+              "sha256": "90131c6ef144b944c2d09ad8c59b4f4e4f249746669888404b8f8d50ed837181"
+            },
+            "arm64_monterey": {
+              "cellar": "/opt/homebrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:1b306039471c2b6c8bb20ac30138baaaedc4315497fdf3945d61fcbbbe98dd0d",
+              "sha256": "1b306039471c2b6c8bb20ac30138baaaedc4315497fdf3945d61fcbbbe98dd0d"
+            },
+            "sonoma": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:116dbf378bfbeb72b75a850be84f93f190f6f249477cea7c8f6bf54343d03d7b",
+              "sha256": "116dbf378bfbeb72b75a850be84f93f190f6f249477cea7c8f6bf54343d03d7b"
+            },
+            "ventura": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:2ad785a7f7277a49c18c4f45cf0b48572998c7d97db71e0d4e628737c5f3fb9a",
+              "sha256": "2ad785a7f7277a49c18c4f45cf0b48572998c7d97db71e0d4e628737c5f3fb9a"
+            },
+            "monterey": {
+              "cellar": "/usr/local/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:5b7d18b46b938edb816c7560df7c4b356e8ab01558472d4f12f0e11c836e16e5",
+              "sha256": "5b7d18b46b938edb816c7560df7c4b356e8ab01558472d4f12f0e11c836e16e5"
+            },
+            "x86_64_linux": {
+              "cellar": "/home/linuxbrew/.linuxbrew/Cellar",
+              "url": "https://ghcr.io/v2/homebrew/core/midnight-commander/blobs/sha256:7a72a393d6610429cb35fd17266c06df529e049c7548481f0e68db85c55e492e",
+              "sha256": "7a72a393d6610429cb35fd17266c06df529e049c7548481f0e68db85c55e492e"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -929,7 +973,7 @@
         }
       },
       "discord": {
-        "version": "0.0.294",
+        "version": "0.0.295",
         "options": {
           "full_name": "discord",
           "args": {
