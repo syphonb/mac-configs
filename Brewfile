@@ -22,6 +22,7 @@ brew 'koekeishiya/formulae/skhd'
 brew 'koekeishiya/formulae/yabai'
 brew 'fish'
 brew 'starship'
+brew 'eza'
 
 cask 'raycast'
 cask 'zoom'
