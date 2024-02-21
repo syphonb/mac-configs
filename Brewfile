@@ -33,6 +33,7 @@ cask 'discord'
 cask 'github'
 cask 'arc'
 cask 'warp'
+cask 'slack'
 
 # terminal emulators
 cask 'kitty'

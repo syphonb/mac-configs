@@ -1031,6 +1031,16 @@
             "require_sha": true
           }
         }
+      },
+      "slack": {
+        "version": "4.36.140",
+        "options": {
+          "full_name": "slack",
+          "args": {
+            "appdir": "~/Applications",
+            "require_sha": true
+          }
+        }
       }
     }
   },
