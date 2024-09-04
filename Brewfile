@@ -24,8 +24,11 @@ brew 'fish'
 brew 'starship'
 brew 'eza'
 brew 'midnight-commander'
+<<<<<<< Updated upstream
 brew 'ollama'
+=======
 brew 'node'
+>>>>>>> Stashed changes
 
 cask 'raycast'
 cask 'zoom'
