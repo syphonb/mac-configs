@@ -25,6 +25,7 @@ brew 'starship'
 brew 'eza'
 brew 'midnight-commander'
 brew 'ollama'
+brew 'node'
 
 cask 'raycast'
 cask 'zoom'
