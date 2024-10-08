@@ -7,6 +7,7 @@ set -gx EDITOR nvim
 
 starship init fish | source
 fzf --fish | source
+thefuck --alias | source
 
-alias ls="eza"
+alias ls="eza -ll -a"
 alias tree="eza --tree"

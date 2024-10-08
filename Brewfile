@@ -25,6 +25,7 @@ brew 'starship'
 brew 'eza'
 brew 'midnight-commander'
 brew 'node'
+brew 'thefuck'
 
 cask 'raycast'
 cask 'zoom'
