@@ -1,0 +1,105 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.30/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 10,
+  "default_container_padding": 10,
+  "border": true,
+  "border_width": 2,
+  "border_offset": -1,
+  "theme": {
+    "palette": "Base16",
+    "name": "Dracula",
+    "unfocused_border": "Base03",
+    "bar_accent": "Base0D"
+  },
+  "stackbar": {
+    "height": 40,
+    "mode": "OnStack",
+    "tabs": {
+      "width": 300,
+      "focused_text": "#00a542",
+      "unfocused_text": "#b3b3b3",
+      "background": "#141414"
+    }
+  },
+  "monitors": [
+    {
+      "name": "DISPLAY1",
+      "index": 0,
+      "workspaces": [
+        {
+          "name": "I",
+          "layout": "UltrawideVerticalStack"
+        },
+        {
+          "name": "II",
+          "layout": "VerticalStack"
+        },
+        {
+          "name": "III",
+          "layout": "HorizontalStack"
+        },
+        {
+          "name": "IV",
+          "layout": "BSP"
+        },
+        {
+          "name": "V",
+          "layout": "Rows"
+        },
+        {
+          "name": "VI",
+          "layout": "Grid"
+        },
+        {
+          "name": "VII",
+          "layout": "RightMainVerticalStack"
+        }
+      ]
+    },
+    {
+      "name": "DISPLAY2",
+      "index": 1,
+      "workspaces": [
+        {
+          "name": "V",
+          "layout": "Rows"
+        }
+      ]
+    }
+  ],
+  "ignore_rules": [
+    {
+      "kind": "Title",
+      "id": "Battlestate Games Launcher",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "League of Legends",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "manage_rules": [
+    {
+      "kind": "Title",
+      "id": "Affinity Photo",
+      "matching_strategy": "Equals"
+    },
+    {
+      "kind": "Title",
+      "id": "Affinity Designer",
+      "matching_strategy": "Equals"
+    }
+  ],
+  "display_index_preferences": {
+    "0": "ACR0519-5&1319e6c7&0&UID4353",
+    "1": "ACR0522-5&1319e6c7&0&UID4352"
+  },
+  "bar_configurations": [
+    "C:/Users/sypho/komorebi.bar.monitor1.json",
+    "C:/Users/sypho/komorebi.bar.monitor2.json"
+  ]
+}
