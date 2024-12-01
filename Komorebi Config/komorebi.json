@@ -97,9 +97,5 @@
   "display_index_preferences": {
     "0": "ACR0519-5&1319e6c7&0&UID4353",
     "1": "ACR0522-5&1319e6c7&0&UID4352"
-  },
-  "bar_configurations": [
-    "C:/Users/sypho/komorebi.bar.monitor1.json",
-    "C:/Users/sypho/komorebi.bar.monitor2.json"
-  ]
+  }
 }
