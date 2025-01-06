@@ -36,6 +36,7 @@ cask 'github'
 cask 'arc'
 cask 'warp'
 cask 'slack'
+cask 'ghostty'
 
 # terminal emulators
 cask 'kitty'
