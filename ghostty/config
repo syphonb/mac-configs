@@ -1,4 +1,6 @@
 theme = dracula
 window-padding-y = 12
 window-padding-x = 12
-
+background-image = /Users/andrew/documents/Wallpapers/Code Editor BG/17-small.png
+background-image-opacity = 0.2
+background-image-position = center

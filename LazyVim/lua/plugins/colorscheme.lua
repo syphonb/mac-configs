@@ -2,7 +2,12 @@
 
 return {
   -- add gruvbox
-  { "Mofiqul/dracula.nvim" },
+  {
+    "Mofiqul/dracula.nvim",
+    opts = {
+      transparent_bg = true,
+    },
+  },
 
   -- Configure LazyVim to load gruvbox
   {
