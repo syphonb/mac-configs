@@ -2,7 +2,6 @@
 cask_args appdir: "~/Applications", require_sha: true
 
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "koekeishiya/formulae"
 
 brew 'git'
