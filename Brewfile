@@ -37,6 +37,7 @@ cask 'arc'
 cask 'warp'
 cask 'slack'
 cask 'ghostty'
+cask 'localsend'
 
 # terminal emulators
 cask 'kitty'
