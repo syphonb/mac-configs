@@ -11,3 +11,6 @@ thefuck --alias | source
 
 alias ls="eza -ll -a"
 alias tree="eza --tree"
+alias cat="bat"
+zoxide init fish | source
+direnv hook fish | source
