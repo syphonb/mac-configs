@@ -44,6 +44,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # Force Chrome to Open on Workspace 2
 assign [class="Google-chrome"] $ws2
+assign [class="feh"] $ws3
 
 # Make Chrome floating for specific popups like devtools
 for_window [class="Google-chrome" title="Developer Tools"] floating enable

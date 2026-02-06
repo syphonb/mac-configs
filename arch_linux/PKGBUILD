@@ -51,6 +51,7 @@ depends=(
   'smartmontools'
   'thefuck'
   'virtualbox-guest-utils'
+  'viu'
   'xclip'
   'yay'
   'yay-debug'
