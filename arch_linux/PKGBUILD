@@ -27,6 +27,7 @@ depends=(
   'i3lock'
   'i3status'
   'iwd'
+  'less'
   'libpulse'
   'lightdm'
   'lightdm-gtk-greeter'
