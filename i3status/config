@@ -1,0 +1,26 @@
+general {
+  output_format = "i3bar"
+  colors = true
+  color_good = "#50FA7B"
+  color_degraded = "#F1FA8C"
+  color_bad = "#FF5555"
+}
+order += "disk /"
+order += "wireless _first_"
+order += "ethernet _second_"
+order += "battery all"
+order += "load"
+order += "tztime local"
+
+# Example of a module definition
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+        format = "%1min"
+}
+
+disk "/" {
+        format = "%avail"
+}
