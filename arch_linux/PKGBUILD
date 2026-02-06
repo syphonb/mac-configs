@@ -1,0 +1,62 @@
+pkgname=syphons-arch-config
+pkgver=1.0
+pkgrel=1
+pkgdesc="Meta-package for my ultimate Arch VM setup"
+arch=('any')
+url="https://github.com/syphonb/mac-configs"
+license=('MIT')
+
+depends=(
+  'bat'
+  'btop'
+  'composer'
+  'direnv'
+  'dmenu'
+  'eza'
+  'fd'
+  'feh'
+  'fish'
+  'fzf'
+  'ghostty'
+  'git'
+  'github-cli'
+  'google-chrome'
+  'gst-plugin-pipewire'
+  'i3-wm'
+  'i3blocks'
+  'i3lock'
+  'i3status'
+  'iwd'
+  'libpulse'
+  'lightdm'
+  'lightdm-gtk-greeter'
+  'linux-headers'
+  'mariadb'
+  'neovim-git'
+  'nginx'
+  'nodejs'
+  'npm'
+  'php'
+  'php-fpm'
+  'php-gd'
+  'php-pgsql'
+  'php-sqlite'
+  'php-tidy'
+  'pipewire'
+  'pipewire-alsa'
+  'pipewire-jack'
+  'pipewire-pulse'
+  'reflector'
+  'ripgrep'
+  'smartmontools'
+  'thefuck'
+  'virtualbox-guest-utils'
+  'xclip'
+  'yay'
+  'yay-debug'
+  'zoxide'
+)
+
+package() {
+  return 0
+}

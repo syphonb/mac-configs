@@ -1,0 +1,16 @@
+post_install() {
+  # Define your list of services
+  local services=(
+    "mariadb.service"
+    "vboxservice.service"
+  )
+
+  echo "--- Finalizing System Configuration ---"
+
+  for service in "${services[@]}"; do
+    echo "Enabling and starting $service..."
+    systemctl enable --now "$service"
+  done
+
+  echo "--- All services are live! ---"
+}
