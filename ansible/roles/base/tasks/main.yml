@@ -16,8 +16,3 @@
       - base-devel
       - git
     state: present
-
-- name: Ensure fish is default shell for vagrant
-  user:
-    name: vagrant
-    shell: /usr/bin/fish

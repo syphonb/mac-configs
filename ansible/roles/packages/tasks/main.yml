@@ -9,6 +9,7 @@
       - direnv
       - eza
       - fd
+      - feh
       - fish
       - fzf
       - github-cli
@@ -32,6 +33,7 @@
       - reflector
       - ripgrep
       - virtualbox-guest-utils
+      - viu
       - xclip
       - zoxide
     state: present
