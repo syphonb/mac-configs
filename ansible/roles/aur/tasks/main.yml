@@ -1,0 +1,17 @@
+---
+- name: Install yay
+  become_user: "{{ dev_user }}"
+  shell: |
+    if ! command -v yay >/dev/null; then
+      cd /tmp
+      git clone https://aur.archlinux.org/yay.git
+      cd yay
+      makepkg -si --noconfirm
+    fi
+  args:
+    creates: /usr/bin/yay
+
+- name: Install AUR packages
+  become_user: "{{ dev_user }}"
+  command: yay -S --noconfirm google-chrome ghostty viu neovim-git
+  changed_when: false

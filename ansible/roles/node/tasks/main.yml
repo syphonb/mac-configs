@@ -1,0 +1,50 @@
+---
+- name: Ensure nvm directory exists
+  become_user: "{{ dev_user }}"
+  file:
+    path: {{ dev_home }}/.nvm
+    state: directory
+    mode: "0755"
+
+- name: Install nvm
+  become_user: "{{ dev_user }}"
+  shell: |
+    curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+  args:
+    creates: {{ dev_home }}/.nvm/nvm.sh
+
+- name: Load nvm and install Node LTS
+  become_user: "{{ dev_user }}"
+  shell: |
+    export NVM_DIR="$HOME/.nvm"
+    source "$NVM_DIR/nvm.sh"
+    nvm install --lts
+    nvm alias default lts/*
+  args:
+    executable: /bin/bash
+
+- name: Enable corepack and install pnpm
+  become_user: "{{ dev_user }}"
+  shell: |
+    export NVM_DIR="$HOME/.nvm"
+    source "$NVM_DIR/nvm.sh"
+    corepack enable
+    corepack prepare pnpm@latest --activate
+  args:
+    executable: /bin/bash
+
+- name: Ensure fish config directory exists
+  become_user: "{{ dev_user }}"
+  file:
+    path: {{ dev_home }}/.config/fish/conf.d
+    state: directory
+
+- name: Add nvm support for fish
+  become_user: "{{ dev_user }}"
+  copy:
+    dest: {{ dev_home }}/.config/fish/conf.d/nvm.fish
+    content: |
+      set -gx NVM_DIR $HOME/.nvm
+      if test -s $NVM_DIR/nvm.sh
+        bass source $NVM_DIR/nvm.sh --no-use
+      end

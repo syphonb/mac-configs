@@ -1,0 +1,23 @@
+---
+- name: Refresh pacman mirrors
+  command: >
+    reflector --country AU --latest 10 --sort rate
+    --save /etc/pacman.d/mirrorlist
+  changed_when: false
+
+- name: Update system
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install base build tools
+  pacman:
+    name:
+      - base-devel
+      - git
+    state: present
+
+- name: Ensure fish is default shell for vagrant
+  user:
+    name: vagrant
+    shell: /usr/bin/fish

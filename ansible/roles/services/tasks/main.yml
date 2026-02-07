@@ -1,0 +1,16 @@
+---
+- name: Initialize MariaDB
+  command: mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+  args:
+    creates: /var/lib/mysql/mysql
+
+- name: Enable and start services
+  systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop:
+    - lightdm
+    - mariadb
+    - nginx
+    - vboxservice

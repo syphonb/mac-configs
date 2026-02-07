@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  vars_files:
+    - group_vars/all.yml
+
+  roles:
+    - base
+    - packages
+    - aur
+    - node
+    - services

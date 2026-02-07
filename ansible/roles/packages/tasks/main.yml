@@ -1,0 +1,36 @@
+---
+- name: Install dev and desktop packages
+  pacman:
+    name:
+      - bass
+      - bat
+      - btop
+      - composer
+      - direnv
+      - eza
+      - fd
+      - fish
+      - fzf
+      - github-cli
+      - i3-wm
+      - i3status
+      - i3lock
+      - lightdm
+      - lightdm-gtk-greeter
+      - mariadb
+      - nginx
+      - nodejs
+      - npm
+      - php
+      - php-fpm
+      - php-gd
+      - php-pgsql
+      - php-sqlite
+      - pipewire
+      - pipewire-pulse
+      - reflector
+      - ripgrep
+      - virtualbox-guest-utils
+      - xclip
+      - zoxide
+    state: present
