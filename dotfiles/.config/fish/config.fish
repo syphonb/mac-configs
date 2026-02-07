@@ -1,6 +1,7 @@
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/opt/ruby/bin
 fish_add_path /Users/andrew/miniconda3/bin
+fish_add_path ~/.local/bin
 
 set -g fish_greeting
 set -gx EDITOR nvim
