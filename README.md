@@ -1,22 +1,31 @@
 # mac-configs
 
-Dotfiles and configuration for macOS, Linux, and Windows systems. Structured for easy symlinking via Ansible or manual setup.
+Dotfiles and configuration for macOS, Linux, and Windows systems. Managed with [GNU Stow](https://www.gnu.org/software/stow/) for easy symlinking.
 
 ## Repository Structure
 
 ```
-├── dotfiles/              # Symlink target for $HOME configs
-│   ├── .config/           # XDG config directory
-│   │   ├── nvim/          # Neovim (LazyVim)
-│   │   ├── fish/          # Fish shell
-│   │   ├── ghostty/       # Ghostty terminal
-│   │   ├── i3/            # i3 window manager (Linux)
-│   │   ├── i3status/      # i3status bar (Linux)
-│   │   ├── kitty/         # Kitty terminal
-│   │   ├── mc/            # Midnight Commander
-│   │   └── starship.toml  # Starship prompt
-│   ├── .skhdrc            # skhd keybindings (macOS)
-│   └── .yabairc           # yabai tiling WM (macOS)
+├── stow/                  # Stow packages (each mirrors $HOME structure)
+│   ├── nvim/              # Neovim (LazyVim)
+│   │   └── .config/nvim/
+│   ├── fish/              # Fish shell
+│   │   └── .config/fish/
+│   ├── ghostty/           # Ghostty terminal
+│   │   └── .config/ghostty/
+│   ├── i3/                # i3 window manager (Linux)
+│   │   └── .config/i3/
+│   ├── i3status/          # i3status bar (Linux)
+│   │   └── .config/i3status/
+│   ├── kitty/             # Kitty terminal
+│   │   └── .config/kitty/
+│   ├── mc/                # Midnight Commander
+│   │   └── .config/mc/
+│   ├── starship/          # Starship prompt
+│   │   └── .config/starship.toml
+│   ├── yabai/             # yabai tiling WM (macOS)
+│   │   └── .yabairc
+│   └── skhd/              # skhd keybindings (macOS)
+│       └── .skhdrc
 │
 ├── windows/               # Windows-specific configs
 │   └── komorebi/          # Komorebi tiling WM
@@ -24,55 +33,80 @@ Dotfiles and configuration for macOS, Linux, and Windows systems. Structured for
 ├── scripts/               # Utility scripts
 │   └── raycast/           # Raycast script commands
 │
-├── ansible/               # Ansible playbooks for setup automation
+├── ansible/               # Ansible playbooks
 ├── arch_linux/            # Arch Linux setup scripts
-├── Brewfile               # Homebrew package bundle
+├── Brewfile               # Homebrew bundle
 └── Brewfile.lock.json
 ```
 
-## Symlinking
+## Using GNU Stow
 
-### Option 1: Symlink entire .config
-
-```bash
-# Backup existing config
-mv ~/.config ~/.config.bak
-
-# Symlink
-ln -sf ~/path/to/mac-configs/dotfiles/.config ~/.config
-```
-
-### Option 2: Symlink individual apps
+### Install Stow
 
 ```bash
-ln -sf ~/path/to/mac-configs/dotfiles/.config/nvim ~/.config/nvim
-ln -sf ~/path/to/mac-configs/dotfiles/.config/fish ~/.config/fish
-ln -sf ~/path/to/mac-configs/dotfiles/.config/kitty ~/.config/kitty
-ln -sf ~/path/to/mac-configs/dotfiles/.config/starship.toml ~/.config/starship.toml
+# macOS
+brew install stow
 
-# macOS only
-ln -sf ~/path/to/mac-configs/dotfiles/.skhdrc ~/.skhdrc
-ln -sf ~/path/to/mac-configs/dotfiles/.yabairc ~/.yabairc
+# Arch Linux
+sudo pacman -S stow
+
+# Ubuntu/Debian
+sudo apt install stow
 ```
 
-### Ansible Example
+### Stow Individual Packages
+
+```bash
+cd ~/path/to/mac-configs/stow
+
+# Stow specific apps
+stow nvim        # Creates ~/.config/nvim → stow/nvim/.config/nvim
+stow fish        # Creates ~/.config/fish → stow/fish/.config/fish
+stow yabai       # Creates ~/.yabairc → stow/yabai/.yabairc
+
+# Stow multiple at once
+stow nvim fish kitty starship
+```
+
+### Stow All Packages
+
+```bash
+cd ~/path/to/mac-configs/stow
+stow */
+```
+
+### Unstow (Remove Symlinks)
+
+```bash
+cd ~/path/to/mac-configs/stow
+stow -D nvim     # Removes ~/.config/nvim symlink
+stow -D */       # Remove all symlinks
+```
+
+### Simulate (Dry Run)
+
+```bash
+stow --simulate nvim   # Shows what would happen without making changes
+```
+
+### Ansible Integration
 
 ```yaml
-- name: Symlink .config directory
-  file:
-    src: "{{ dotfiles_repo }}/dotfiles/.config"
-    dest: "~/.config"
-    state: link
+- name: Clone dotfiles
+  git:
+    repo: https://github.com/syphonb/mac-configs.git
+    dest: "{{ ansible_env.HOME }}/mac-configs"
 
-- name: Symlink macOS dotfiles
-  file:
-    src: "{{ dotfiles_repo }}/dotfiles/{{ item }}"
-    dest: "~/{{ item }}"
-    state: link
+- name: Stow dotfiles packages
+  command: stow {{ item }}
+  args:
+    chdir: "{{ ansible_env.HOME }}/mac-configs/stow"
   loop:
-    - .skhdrc
-    - .yabairc
-  when: ansible_os_family == "Darwin"
+    - nvim
+    - fish
+    - kitty
+    - starship
+    # Add more packages as needed
 ```
 
 ## Installing Apps from Brewfile
