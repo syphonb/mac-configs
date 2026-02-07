@@ -9,6 +9,7 @@
       - direnv
       - eza
       - fd
+      - feh
       - fish
       - fzf
       - github-cli
