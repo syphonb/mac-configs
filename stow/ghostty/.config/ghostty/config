@@ -1,7 +1,9 @@
 theme = dracula
 window-padding-y = 12
 window-padding-x = 12
-background-image = /Users/andrew/documents/Wallpapers/Code Editor BG/17-small.png
-background-image-opacity = 0.2
+# background-image = ~/background-images/8.png
+background-image-opacity = 0.05
 background-image-position = center
+background-image-fit = cover
 font-size = 11
+background-opacity = 0.9

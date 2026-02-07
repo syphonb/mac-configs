@@ -37,6 +37,7 @@ depends=(
   'nginx'
   'nodejs'
   'npm'
+  'picom'
   'php'
   'php-fpm'
   'php-gd'
