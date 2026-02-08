@@ -192,8 +192,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 #bindsym $mod+r mode "resize"
 
-exec --no-startup-id picom
-exec --no-startup-id while true; do feh --bg-max --randomize ~/background-images/*; sleep 30; done
 # Resizing
 bindsym $mod+Shift+w resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+a resize shrink width 10 px or 10 ppt
