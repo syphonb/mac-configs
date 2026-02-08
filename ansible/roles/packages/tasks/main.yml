@@ -4,10 +4,12 @@
     name:
       - bass
       - bat
+      - bind
       - btop
       - composer
       - direnv
       - eza
+      - dnsmasq
       - fd
       - feh
       - fish

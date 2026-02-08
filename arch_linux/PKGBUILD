@@ -8,10 +8,12 @@ license=('MIT')
 
 depends=(
   'bat'
+  'bind'
   'btop'
   'composer'
   'direnv'
   'dmenu'
+  'dnsmasq'
   'eza'
   'fd'
   'feh'

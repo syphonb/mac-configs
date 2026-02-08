@@ -15,3 +15,6 @@ alias tree="eza --tree"
 alias cat="bat"
 zoxide init fish | source
 direnv hook fish | source
+
+# opencode
+fish_add_path /home/syphonb/.opencode/bin
