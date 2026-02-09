@@ -5,7 +5,7 @@
     name: reflector
     state: present
     update_cache: true
-    
+
 - name: Refresh pacman mirrors
   command: >
     reflector --country AU --latest 10 --sort rate
@@ -22,4 +22,13 @@
     name:
       - base-devel
       - git
+      - go
     state: present
+
+- name: Allow passwordless sudo for dev user (for provisioning)
+  become: true
+  copy:
+    dest: /etc/sudoers.d/99-dev-user
+    content: "{{ dev_user }} ALL=(ALL) NOPASSWD: ALL\n"
+    mode: "0440"
+    validate: "visudo -cf %s"
