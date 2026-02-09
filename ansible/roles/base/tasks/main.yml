@@ -1,4 +1,11 @@
 ---
+- name: Install reflector
+  become: true
+  pacman:
+    name: reflector
+    state: present
+    update_cache: true
+    
 - name: Refresh pacman mirrors
   command: >
     reflector --country AU --latest 10 --sort rate
