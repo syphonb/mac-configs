@@ -21,6 +21,7 @@
       - lightdm
       - lightdm-gtk-greeter
       - mariadb
+      - neovim
       - nginx
       - nodejs
       - npm
