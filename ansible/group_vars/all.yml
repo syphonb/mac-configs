@@ -1,2 +1,8 @@
 dev_user: syphonb
 dev_home: "/home/syphonb"
+
+aur_packages:
+  - google-chrome
+  - ghostty
+  - viu
+  - neovim-git

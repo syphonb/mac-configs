@@ -12,6 +12,14 @@
     creates: /usr/bin/yay
 
 - name: Install AUR packages
+  become: true
   become_user: "{{ dev_user }}"
-  command: yay -S --noconfirm google-chrome ghostty viu neovim-git
-  changed_when: false
+  command: >
+    yay -S --noconfirm --needed
+    --answerclean All
+    --answerdiff None
+    {{ aur_packages | join(' ') }}
+  environment:
+    HOME: "{{ dev_home }}"
+  args:
+    creates: "/usr/bin/{{ aur_packages[0] }}"
