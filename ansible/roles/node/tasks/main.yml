@@ -2,7 +2,7 @@
 - name: Ensure nvm directory exists
   become_user: "{{ dev_user }}"
   file:
-    path: {{ dev_home }}/.nvm
+    path: "{{ dev_home }}/.nvm"
     state: directory
     mode: "0755"
 
