@@ -1,9 +1,10 @@
 ---
 - name: Install reflector
-  community.general.pacman:
+  become: true
+  ansible.builtin.pacman:
     name: reflector
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Refresh pacman mirrors
   command: >
@@ -12,12 +13,14 @@
   changed_when: false
 
 - name: Update system
-  pacman:
-    update_cache: yes
-    upgrade: yes
+  become: true
+  ansible.builtin.pacman:
+    update_cache: true
+    upgrade: true
 
 - name: Install base build tools
-  pacman:
+  become: true
+  ansible.builtin.pacman:
     name:
       - base-devel
       - git
