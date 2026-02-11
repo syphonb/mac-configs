@@ -1,16 +1,16 @@
 ---
-- name: Install reflector
-  become: true
-  ansible.builtin.pacman:
+- name: Install reflector (x86_64 only)
+  community.general.pacman:
     name: reflector
     state: present
     update_cache: true
+  when: ansible_architecture == "x86_64"
 
-- name: Refresh pacman mirrors
-  command: >
+- name: Refresh pacman mirrors (x86_64 only)
+  ansible.builtin.command: >
     reflector --country AU --latest 10 --sort rate
     --save /etc/pacman.d/mirrorlist
-  changed_when: false
+  when: ansible_architecture == "x86_64"
 
 - name: Update system
   become: true
