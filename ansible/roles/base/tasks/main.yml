@@ -1,10 +1,9 @@
 ---
 - name: Install reflector
-  become: true
-  pacman:
+  community.general.pacman:
     name: reflector
     state: present
-    update_cache: true
+    update_cache: yes
 
 - name: Refresh pacman mirrors
   command: >
