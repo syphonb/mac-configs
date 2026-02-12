@@ -39,6 +39,27 @@
     path: "{{ dev_home }}/.config/fish/conf.d"
     state: directory
 
+- name: Install Fisher (fish plugin manager)
+  become_user: "{{ dev_user }}"
+  ansible.builtin.shell: |
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
+    fisher install jorgebucaran/fisher
+  args:
+    executable: /usr/bin/fish
+    creates: "{{ dev_home }}/.config/fish/functions/fisher.fish"
+  environment:
+    HOME: "{{ dev_home }}"
+
+- name: Install bass via Fisher
+  become_user: "{{ dev_user }}"
+  ansible.builtin.shell: |
+    fisher install edc/bass
+  args:
+    executable: /usr/bin/fish
+    creates: "{{ dev_home }}/.config/fish/functions/bass.fish"
+  environment:
+    HOME: "{{ dev_home }}"
+
 - name: Add nvm support for fish
   become_user: "{{ dev_user }}"
   copy:

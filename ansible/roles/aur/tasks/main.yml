@@ -22,4 +22,4 @@
   environment:
     HOME: "{{ dev_home }}"
   args:
-    creates: "/usr/bin/{{ aur_packages[0] }}"
+    creates: /usr/bin/google-chrome-stable

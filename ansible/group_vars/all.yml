@@ -4,4 +4,3 @@ dev_home: "/home/syphonb"
 aur_packages:
   - google-chrome
   - ghostty
-  - viu

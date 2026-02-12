@@ -1,8 +1,7 @@
 ---
 - name: Install dev and desktop packages
-  pacman:
+  community.general.pacman:
     name:
-      - bass
       - bat
       - bind
       - btop
@@ -32,8 +31,11 @@
       - php-sqlite
       - pipewire
       - pipewire-pulse
-      - reflector
       - ripgrep
+      - starship
+      - stow
+      - thefuck
+      - tmux
       - virtualbox-guest-utils
       - viu
       - xclip

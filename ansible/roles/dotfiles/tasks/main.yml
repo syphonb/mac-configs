@@ -1,4 +1,12 @@
 ---
+- name: Clone TPM (Tmux Plugin Manager)
+  become_user: "{{ dev_user }}"
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ dev_home }}/.tmux/plugins/tpm"
+    depth: 1
+  become: false
+
 - name: Detect all Stow packages
   ansible.builtin.find:
     # This assumes your 'stow' folder is at the root of your repo
@@ -10,10 +18,9 @@
 
 - name: Stow dotfiles packages
   ansible.builtin.shell:
-    # Use the actual user's home, not root's
-    cmd: "stow -v -d {{ playbook_dir }}/../stow -t /home/{{ ansible_user_id }} {{ item.path | basename }}"
+    cmd: "stow -v -d {{ playbook_dir }}/../stow -t {{ dev_home }} {{ item.path | basename }}"
   loop: "{{ found_packages.files }}"
   register: stow_result
-  # We run this as the user so symlinks have the correct ownership
+  become_user: "{{ dev_user }}"
   become: false
   changed_when: "'LINK' in stow_result.stderr or 'UNLINK' in stow_result.stderr"

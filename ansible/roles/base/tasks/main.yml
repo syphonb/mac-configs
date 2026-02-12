@@ -14,13 +14,13 @@
 
 - name: Update system
   become: true
-  ansible.builtin.pacman:
+  community.general.pacman:
     update_cache: true
     upgrade: true
 
 - name: Install base build tools
   become: true
-  ansible.builtin.pacman:
+  community.general.pacman:
     name:
       - base-devel
       - git

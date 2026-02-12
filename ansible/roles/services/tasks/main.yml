@@ -5,7 +5,7 @@
     creates: /var/lib/mysql/mysql
 
 - name: Enable and start services
-  systemd:
+  ansible.builtin.systemd:
     name: "{{ item }}"
     enabled: true
     state: started
@@ -13,4 +13,10 @@
     - lightdm
     - mariadb
     - nginx
-    - vboxservice
+
+- name: Enable and start VirtualBox guest service
+  ansible.builtin.systemd:
+    name: vboxservice
+    enabled: true
+    state: started
+  when: ansible_virtualization_type == "virtualbox"
