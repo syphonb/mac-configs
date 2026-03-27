@@ -1,0 +1,10 @@
+---
+- name: Enable and start services
+  ansible.builtin.systemd:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  loop:
+    - lightdm
+    - mariadb
+    - nginx

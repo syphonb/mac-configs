@@ -1,0 +1,50 @@
+dev_user: syphonb
+dev_home: "/home/syphonb"
+
+apt_packages:
+  - bat
+  - btop
+  - composer
+  - direnv
+  - dnsmasq
+  - dnsutils
+  - eza
+  - fd-find
+  - feh
+  - fish
+  - fzf
+  - gh
+  - ghostty
+  - i3-wm
+  - i3status
+  - i3lock
+  - lightdm
+  - lightdm-gtk-greeter
+  - mariadb-server
+  - neovim
+  - nginx
+  - nodejs
+  - npm
+  - php
+  - php-fpm
+  - php-gd
+  - php-pgsql
+  - php-sqlite3
+  - pipewire
+  - pipewire-pulse
+  - ripgrep
+  - starship
+  - stow
+  - tmux
+  - xclip
+  - zoxide
+
+third_party_deb_packages:
+  - name: google-chrome-stable
+    deb: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+ai_cli_npm_packages:
+  - "@anthropic-ai/claude-code"
+  - "@openai/codex"
+  - "@google/gemini-cli"
+  - opencode-ai

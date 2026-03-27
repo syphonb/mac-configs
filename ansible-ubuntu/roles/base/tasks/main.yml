@@ -1,0 +1,28 @@
+---
+- name: Refresh apt cache
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Upgrade installed packages
+  ansible.builtin.apt:
+    upgrade: dist
+
+- name: Install base build tools
+  ansible.builtin.apt:
+    name:
+      - build-essential
+      - ca-certificates
+      - curl
+      - git
+      - gnupg
+      - golang-go
+      - software-properties-common
+    state: present
+
+- name: Allow passwordless sudo for dev user (for provisioning)
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/99-dev-user
+    content: "{{ dev_user }} ALL=(ALL) NOPASSWD: ALL\n"
+    mode: "0440"
+    validate: "visudo -cf %s"

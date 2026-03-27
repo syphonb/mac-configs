@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+
+  vars_files:
+    - group_vars/all.yml
+
+  roles:
+    - base
+    - packages
+    - node
+    - ai_tools
+    - services
+    - dotfiles

@@ -1,0 +1,11 @@
+---
+- name: Install AI coding CLIs globally via npm
+  become_user: "{{ dev_user }}"
+  ansible.builtin.shell: |
+    export NVM_DIR="$HOME/.nvm"
+    . "$NVM_DIR/nvm.sh"
+    npm install -g {{ ai_cli_npm_packages | join(' ') }}
+  args:
+    executable: /bin/bash
+  environment:
+    HOME: "{{ dev_home }}"
