@@ -17,7 +17,6 @@ end
 
 starship init fish | source
 fzf --fish | source
-thefuck --alias | source
 
 alias ls="eza -ll -a"
 alias tree="eza --tree"
