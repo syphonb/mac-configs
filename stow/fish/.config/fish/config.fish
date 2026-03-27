@@ -29,6 +29,14 @@ function fd
     end
 end
 
+if not type -q bat
+    if type -q batcat
+        function bat
+            batcat $argv
+        end
+    end
+end
+
 alias ls="eza -ll -a"
 alias tree="eza --tree"
 alias cat="bat"
