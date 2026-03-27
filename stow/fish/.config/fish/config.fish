@@ -18,6 +18,17 @@ end
 starship init fish | source
 fzf --fish | source
 
+function fd
+    if command -q fd
+        command fd $argv
+    else if command -q fdfind
+        command fdfind $argv
+    else
+        echo "fd/fdfind not installed"
+        return 1
+    end
+end
+
 alias ls="eza -ll -a"
 alias tree="eza --tree"
 alias cat="bat"
