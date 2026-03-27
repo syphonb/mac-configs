@@ -17,6 +17,11 @@
     update_cache: true
     cache_valid_time: 3600
 
+- name: Remove apt-installed fzf
+  ansible.builtin.apt:
+    name: fzf
+    state: absent
+
 - name: Install VirtualBox guest packages
   ansible.builtin.apt:
     name:
@@ -26,12 +31,60 @@
     state: present
   when: ansible_virtualization_type == "virtualbox"
 
+- name: Check installed Neovim version
+  ansible.builtin.command: nvim --version
+  register: neovim_version
+  changed_when: false
+  failed_when: false
+
+- name: Download Neovim stable release
+  ansible.builtin.get_url:
+    url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+    dest: /tmp/nvim-linux-x86_64.tar.gz
+    mode: "0644"
+  when: neovim_version.rc != 0 or 'v0.11.' not in neovim_version.stdout
+
+- name: Extract Neovim stable release
+  ansible.builtin.unarchive:
+    src: /tmp/nvim-linux-x86_64.tar.gz
+    dest: /opt
+    remote_src: true
+  when: neovim_version.rc != 0 or 'v0.11.' not in neovim_version.stdout
+
+- name: Link Neovim binary
+  ansible.builtin.file:
+    src: /opt/nvim-linux-x86_64/bin/nvim
+    dest: /usr/local/bin/nvim
+    state: link
+    force: true
+
 - name: Ensure local bin directory exists for dev user
   become_user: "{{ dev_user }}"
   ansible.builtin.file:
     path: "{{ dev_home }}/.local/bin"
     state: directory
     mode: "0755"
+
+- name: Clone fzf repository
+  become_user: "{{ dev_user }}"
+  ansible.builtin.git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: "{{ dev_home }}/.fzf"
+    depth: 1
+    update: true
+  register: fzf_repo
+  environment:
+    HOME: "{{ dev_home }}"
+
+- name: Install fzf
+  become_user: "{{ dev_user }}"
+  ansible.builtin.shell: |
+    "{{ dev_home }}/.fzf/install" --all
+  args:
+    executable: /bin/bash
+  environment:
+    HOME: "{{ dev_home }}"
+  when: fzf_repo.changed
 
 - name: Install Starship prompt
   become_user: "{{ dev_user }}"

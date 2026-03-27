@@ -12,7 +12,6 @@ apt_packages:
   - fd-find
   - feh
   - fish
-  - fzf
   - gh
   - ghostty
   - i3-wm
@@ -21,7 +20,6 @@ apt_packages:
   - lightdm
   - lightdm-gtk-greeter
   - mariadb-server
-  - neovim
   - nginx
   - nodejs
   - npm
@@ -34,6 +32,7 @@ apt_packages:
   - pipewire-pulse
   - ripgrep
   - stow
+  - suckless-tools
   - tmux
   - xclip
   - zoxide
