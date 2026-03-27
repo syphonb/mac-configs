@@ -20,6 +20,8 @@
 - name: Install VirtualBox guest packages
   ansible.builtin.apt:
     name:
+      - dkms
+      - "linux-headers-{{ ansible_kernel }}"
       - virtualbox-guest-utils
     state: present
   when: ansible_virtualization_type == "virtualbox"
