@@ -51,7 +51,7 @@ for_window [class="Google-chrome" title="Developer Tools"] floating enable
 
 # Set your termiinal
 bindsym $launcher_mod+Return exec ghostty
-bindsym $launcher_mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu%'"
+bindsym $launcher_mod+space exec "dmenu_run -nf '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-10' -p 'dmenu'"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
