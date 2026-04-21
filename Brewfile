@@ -24,6 +24,8 @@ brew 'eza'
 brew 'midnight-commander'
 brew 'node'
 brew 'thefuck'
+brew 'zoxide'
+brew 'direnv'
 
 cask 'raycast'
 cask 'vlc'
