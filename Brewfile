@@ -5,6 +5,7 @@ tap "koekeishiya/formulae"
 
 brew 'git'
 brew 'zsh'
+brew 'bat'
 brew 'openssl'
 brew 'coreutils'
 brew 'fzf'
