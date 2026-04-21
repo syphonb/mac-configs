@@ -26,17 +26,16 @@ brew 'node'
 brew 'thefuck'
 
 cask 'raycast'
-cask 'zoom'
 cask 'vlc'
 cask 'visual-studio-code'
 cask 'discord'
 cask 'github'
 cask 'slack'
-cask 'ghostty'
 cask 'localsend'
 
 # terminal emulators
 cask 'kitty'
+cask 'ghostty'
 
 # fonts
 cask 'font-meslo-lg-nerd-font'
