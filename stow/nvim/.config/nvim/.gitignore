@@ -6,3 +6,6 @@ debug
 foo.*
 *.log
 data
+
+# Plugin versions are per-machine; let each host manage its own.
+lazy-lock.json
